@@ -18,23 +18,24 @@ const teenFare = 20;
 
 const elderlyFare = 40;
 
-//definire il prezzo finale
+//definire il prezzo finale e l'eventuale messaggio
 let finalPrice = basePrice;
 
+let discountMessage;
+
 if (userAge < 18) {
-    finalPrice = basePrice / 100 * (100 - teenFare)
+    finalPrice = basePrice / 100 * (100 - teenFare);
+    discountMessage = `Complimenti, hai ricevuto uno sconto del ${teenFare}%!`;
 } else if (userAge > 65){
-    finalPrice = basePrice / 100 * (100 - elderlyFare)
+    finalPrice = basePrice / 100 * (100 - elderlyFare);
+    discountMessage = `Complimenti, hai ricevuto uno sconto del ${elderlyFare}%!`;
 }
 
 //output
 document.getElementById("price-shown").innerHTML = finalPrice.toFixed(2);
 
-//messaggio di scontistica ottenuta
-if (userAge < 18) {
-    document.getElementById("discount-message").innerHTML = `Complimenti, hai ricevuto uno sconto del ${teenFare}%!`
-} else if (userAge > 65){
-    document.getElementById("discount-message").innerHTML = `Complimenti, hai ricevuto uno sconto del ${elderlyFare}%!`
+if (discountMessage != undefined){
+    document.getElementById("discount-message").innerHTML = discountMessage;
 }
 
 
