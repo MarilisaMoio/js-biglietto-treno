@@ -22,7 +22,8 @@ header{
     height: var(--header-h);
     background-color: red;
     padding: 15px;
-    color: white
+    color: white;
+    box-shadow: 0px 0px 5px 1px #000000;
 }
 
 main{
@@ -38,7 +39,8 @@ main{
     left: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
-    border-radius: 20px;
+    border-radius: 20px; 
+    box-shadow: 0px 0px 10px 1px #000000;
     padding: 20px 15px;
     background-color: red;
     color: white;
